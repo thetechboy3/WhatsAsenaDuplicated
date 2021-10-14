@@ -23,7 +23,13 @@ if (Config.WORKTYPE == 'private') {
     Asena.addCommand({pattern: 'alive', fromMe: true, desc: Lang.ALIVE_DESC}, (async (message, match) => {
 
         if (Config.ALIVEMSG == 'default') {
-            await message.client.sendMessage(message.jid,'```Tanrı Türk\'ü Korusun. 🐺 Asena Hizmetinde!```\n\n*Version:* ```'+Config.VERSION+'```\n*Branch:* ```'+Config.BRANCH+'```\n*Telegram Group:* https://t.me/AsenaSupport\n*Telegram Channel:* https://t.me/asenaremaster\n*Plugin Channel:* ' + Config.CHANNEL , MessageType.text);
+            await message.client.sendMessage(message.jid,'*Whatsapp Userbot [Remastered]*
+\n*Hey Shubham, I am alive. System is online.*
+\n\n*Owner:* *thetechboy3*\n*Version:*
+'+Config.VERSION+'
+\n*Branch:*
+'+Config.BRANCH+'
+\n*Python:* 3.9.7\n*Telethon:* 1.23.0\n*My Profile:* https://github.com/thetechboy3 , MessageType.text);
         }
         else {
             var payload = Config.ALIVEMSG
@@ -56,7 +62,13 @@ else if (Config.WORKTYPE == 'public') {
     Asena.addCommand({pattern: 'alive', fromMe: false, desc: Lang.ALIVE_DESC}, (async (message, match) => {
 
         if (Config.ALIVEMSG == 'default') {
-            await message.client.sendMessage(message.jid,'```Tanrı Türk\'ü Korusun. 🐺 Asena Hizmetinde!```\n\n*Version:* ```'+Config.VERSION+'```\n*Branch:* ```'+Config.BRANCH+'```\n*Telegram Group:* https://t.me/AsenaSupport\n*Telegram Channel:* https://t.me/asenaremaster\n*Plugin Channel:* ' + Config.CHANNEL , MessageType.text);
+            await message.client.sendMessage(message.jid,'*Whatsapp Userbot [Remastered]*
+\n*Hey Shubham, I am alive. System is online.*
+\n\n*Owner:* *thetechboy3*\n*Version:*
+'+Config.VERSION+'
+\n*Branch:*
+'+Config.BRANCH+'
+\n*Python:* 3.9.7\n*Telethon:* 1.23.0\n*My Profile:* https://github.com/thetechboy3 , MessageType.text);
         }
         else {
             var payload = Config.ALIVEMSG
