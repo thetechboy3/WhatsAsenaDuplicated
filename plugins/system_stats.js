@@ -8,7 +8,7 @@ Developer & Co-Founder - Phaticusthiccy
 */
 
 const Asena = require('../events');
-const {MessageType} = require('@adiwajshing/baileys');
+const {MessageType, Mimetype, MessageOptions} = require('@adiwajshing/baileys');
 const {spawnSync} = require('child_process');
 const Config = require('../config');
 const chalk = require('chalk');
@@ -23,7 +23,13 @@ if (Config.WORKTYPE == 'private') {
     Asena.addCommand({pattern: 'alive', fromMe: true, desc: Lang.ALIVE_DESC}, (async (message, match) => {
 
         if (Config.ALIVEMSG == 'default') {
-            await message.client.sendMessage(message.jid,'```Tanrı Türk\'ü Korusun. 🐺 Asena Hizmetinde!```\n\n*Version:* ```'+Config.VERSION+'```\n*Branch:* ```'+Config.BRANCH+'```\n*Telegram Group:* https://t.me/AsenaSupport\n*Telegram Channel:* https://t.me/asenaremaster\n*Plugin Channel:* ' + Config.CHANNEL , MessageType.text);
+            await message.client.sendMessage(message.jid,'*Whatsapp Userbot [Remastered]*
+\n*Hey Shubham, I am alive. System is online.*
+\n\n*Owner:* *thetechboy3*\n*Version:*
+'+Config.VERSION+'
+\n*Branch:*
+'+Config.BRANCH+'
+\n*Python:* 3.9.7\n*Telethon:* 1.23.0\n*My Profile:* https://github.com/thetechboy3 , MessageType.text);
         }
         else {
             var payload = Config.ALIVEMSG
@@ -32,7 +38,7 @@ if (Config.WORKTYPE == 'private') {
             if (payload.includes('{pp}')) {
                 const ppUrl = await message.client.getProfilePicture() 
                 const resim = await Axios.get(ppUrl, {responseType: 'arraybuffer'})
-                await message.sendMessage(Buffer(resim.data), MessageType.image, { caption: payload.replace('{version}', Config.VERSION).replace('{pp}', '').replace('{info}', `${status.status}`).replace('{plugin}', Config.CHANNEL)});
+                await message.client.sendMessage(message.jid, Buffer.from(resim.data), MessageType.image, { mimetype: Mimetype.png, caption: payload.replace('{version}', Config.VERSION).replace('{pp}', '').replace('{info}', `${status.status}`).replace('{plugin}', Config.CHANNEL)});
             }
             else if (payload.includes('{asenalogo}')) {
                 await message.client.sendMessage(message.jid,fs.readFileSync('/root/WhatsAsenaDuplicated/media/gif/WhatsAsena Animated.mp4'), MessageType.video, { caption: payload.replace('{version}', Config.VERSION).replace('{pp}', '').replace('{info}', `${status.status}`).replace('{plugin}', Config.CHANNEL).replace('{asenalogo}', '')});
@@ -56,7 +62,13 @@ else if (Config.WORKTYPE == 'public') {
     Asena.addCommand({pattern: 'alive', fromMe: false, desc: Lang.ALIVE_DESC}, (async (message, match) => {
 
         if (Config.ALIVEMSG == 'default') {
-            await message.client.sendMessage(message.jid,'```Tanrı Türk\'ü Korusun. 🐺 Asena Hizmetinde!```\n\n*Version:* ```'+Config.VERSION+'```\n*Branch:* ```'+Config.BRANCH+'```\n*Telegram Group:* https://t.me/AsenaSupport\n*Telegram Channel:* https://t.me/asenaremaster\n*Plugin Channel:* ' + Config.CHANNEL , MessageType.text);
+            await message.client.sendMessage(message.jid,'*Whatsapp Userbot [Remastered]*
+\n*Hey Shubham, I am alive. System is online.*
+\n\n*Owner:* *thetechboy3*\n*Version:*
+'+Config.VERSION+'
+\n*Branch:*
+'+Config.BRANCH+'
+\n*Python:* 3.9.7\n*Telethon:* 1.23.0\n*My Profile:* https://github.com/thetechboy3 , MessageType.text);
         }
         else {
             var payload = Config.ALIVEMSG
@@ -65,7 +77,7 @@ else if (Config.WORKTYPE == 'public') {
             if (payload.includes('{pp}')) {
                 const ppUrl = await message.client.getProfilePicture() 
                 const resim = await Axios.get(ppUrl, {responseType: 'arraybuffer'})
-                await message.sendMessage(Buffer(resim.data), MessageType.image, { caption: payload.replace('{version}', Config.VERSION).replace('{pp}', '').replace('{info}', `${status.status}`).replace('{plugin}', Config.CHANNEL)});
+                await message.client.sendMessage(message.jid, Buffer.from(resim.data), MessageType.image, { mimetype: Mimetype.png, caption: payload.replace('{version}', Config.VERSION).replace('{pp}', '').replace('{info}', `${status.status}`).replace('{plugin}', Config.CHANNEL)});
             }
             else if (payload.includes('{asenalogo}')) {
                 await message.client.sendMessage(message.jid,fs.readFileSync('/root/WhatsAsenaDuplicated/media/gif/WhatsAsena Animated.mp4'), MessageType.video, { caption: payload.replace('{version}', Config.VERSION).replace('{pp}', '').replace('{info}', `${status.status}`).replace('{plugin}', Config.CHANNEL).replace('{asenalogo}', '')});
